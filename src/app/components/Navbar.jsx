@@ -29,7 +29,7 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
         >
-          EM FULLSTACK DEV
+          EM WEB DEV
         </Link>
         <div className="mobile-menu block md:hidden">
           {!isNavbarOpen ? (
