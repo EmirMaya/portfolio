@@ -86,7 +86,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="email"
+                placeholder="Email"
                 className="bg-[#393939] border border-neutral-400 placeholder-[#76797C] text-gray-100 text-sm block w-full p-2.5"
               />
               <label
@@ -99,7 +99,7 @@ const Contact = () => {
                 type="text"
                 name="subject"
                 id="subject"
-                placeholder="subject"
+                placeholder="Subject"
                 className="bg-[#393939] border border-neutral-400 placeholder-[#76797C] text-gray-100 text-sm block w-full p-2.5"
               />
             </div>
@@ -113,7 +113,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 id="message"
-                placeholder="message..."
+                placeholder="Message..."
                 className="bg-[#393939] border border-neutral-400 placeholder-[#76797C] text-gray-100 text-sm block w-full p-2.5"
               />
             </div>

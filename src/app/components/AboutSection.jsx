@@ -36,7 +36,7 @@ const TAB_DATA = [
         <li>Technician in Programming</li>
         <li>
           {" "}
-          Universidad Tecnológica Nacional, Argentina, San Rafale, Mendoza.
+          Universidad Tecnológica Nacional, Argentina, San Rafael, Mendoza.
         </li>
       </ul>
     ),

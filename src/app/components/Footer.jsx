@@ -7,7 +7,7 @@ const Footer = () => {
             <span>
                 EM WEB DEVELOPER
             </span>
-            <p className='text-neutral-500 text-center'>© All rights reserver 2024</p>
+            <p className='text-neutral-500 text-center'>© All rights reserved 2024</p>
        </div>
         </footer>
   )
