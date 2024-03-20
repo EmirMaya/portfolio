@@ -34,11 +34,11 @@ const Hero = () => {
               />
             </h1>
             <p className="text-gray-400 text-lg mb-6 text-start">
-              I'm a Technician in Programming at the Universidad Tecnológica
-              Nacional of Argentina, and I'm starting my career as a full stack developer. I'm
+              I&apos;m a Technician in Programming at the Universidad Tecnológica
+              Nacional of Argentina, and I&apos;m starting my career as a full stack developer. I&apos;m
               responsible, self-taught, committed, good at working with a team
               and I would like to gain more experience in the IT world. I mostly
-              have experience with frontend but I am committed to expanding
+              have experience with frontend but I&apos;m committed to expanding
               proficiency in backend development to broaden my skill set.
             </p>
             <div>
@@ -49,7 +49,7 @@ const Hero = () => {
                 Hire Me
               </Link>
               <Link
-                href="/"
+                href="https://drive.google.com/file/d/19k1MwIvrTeK8b0NOrSJo49Cx1Ulto5kJ/view?usp=sharing"
                 target="_blank"
                 className="px-6 text-center inline-block py-3 w-full sm:w-1/4 mr-4 border border-white hover:bg-neutral-500 text-white"
               >

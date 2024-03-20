@@ -77,12 +77,12 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I'm a versatile web developer proficient in both frontend and
+            I&apos;m a versatile web developer proficient in both frontend and
             backend technologies, dedicated to crafting engaging and dynamic web
             solutions. My toolkit includes JavaScript, React, Redux, Angular,
             Node.js, Express, PostgreSQL, HTML, CSS, TailwindCSS, SASS and Git.
             Continuously seeking growth opportunities, I thrive on learning new
-            concepts and refining my abilities. Collaborative by nature, I'm
+            concepts and refining my abilities. Collaborative by nature, I&apos;m
             eager to join forces with fellow developers to produce exceptional
             applications.
           </p>
