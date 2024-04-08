@@ -64,9 +64,9 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className=" rounded-full bg-[#2A2A2A] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] p-4 relative">
+          <div className=" rounded-full bg-[#101a3580] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] p-4 relative">
             <Image
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 drop-image"
               src={"/images/avatar.png"}
               alt="avatar"
               width={300}

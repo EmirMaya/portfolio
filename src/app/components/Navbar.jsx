@@ -23,8 +23,8 @@ const navLinks = [
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto top-0 left-0 right-0 z-[100] bg-[#151515] bg-opacity-100">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className="fixed mx-auto top-0 left-0 right-0 z-[100] bg-[#0e0c1f] bg-opacity-100 shadow-md ">
+      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 ">
         <Link
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"

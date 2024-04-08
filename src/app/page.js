@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#252525]">
+    <main className="flex min-h-screen flex-col bg-[#090918]">
       <Navbar />
       <div className="container mt-24 mx-auto px-12 py-4">
         <Hero />
