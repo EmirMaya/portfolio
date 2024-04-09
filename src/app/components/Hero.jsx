@@ -33,7 +33,7 @@ const Hero = () => {
                 repeat={Infinity}
               />
             </h1>
-            <p className="text-gray-400 text-lg mb-6 text-start">
+            <p className="text-[#91b3d2] text-lg mb-6 text-start">
               I&apos;m a Technician in Programming at the Universidad Tecnológica
               Nacional of Argentina, and I&apos;m starting my career as a full stack developer. I&apos;m
               responsible, self-taught, committed, good at working with a team

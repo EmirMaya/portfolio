@@ -44,7 +44,7 @@ const Contact = () => {
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
-        <p className="text-neutral-500 mb-4 max-w-md">
+        <p className="text-[#6e88a1] mb-4 max-w-md">
           {" "}
           I&apos;m actively seeking new opportunities. Feel free to reach out
           anytime - I&apos;m here to chat or answer any questions you may have!
@@ -87,7 +87,7 @@ const Contact = () => {
                 name="email"
                 id="email"
                 placeholder="Email"
-                className="bg-[#393939] border border-neutral-400 placeholder-[#76797C] text-gray-100 text-sm block w-full p-2.5"
+                className="bg-[#151b47] border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
               />
               <label
                 htmlFor="subject"
@@ -100,7 +100,7 @@ const Contact = () => {
                 name="subject"
                 id="subject"
                 placeholder="Subject"
-                className="bg-[#393939] border border-neutral-400 placeholder-[#76797C] text-gray-100 text-sm block w-full p-2.5"
+                className="bg-[#151b47] border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
               />
             </div>
             <div className="mb-6">
@@ -114,7 +114,7 @@ const Contact = () => {
                 name="message"
                 id="message"
                 placeholder="Message..."
-                className="bg-[#393939] border border-neutral-400 placeholder-[#76797C] text-gray-100 text-sm block w-full p-2.5"
+                className="bg-[#151b47] border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
               />
             </div>
             <button
