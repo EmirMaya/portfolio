@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Overlay from "./Overlay";
 import NavLink from "./NavLink";
+import RetroLogo from "../icons/RetroLogo";
+import Image from "next/image";
 
 const navLinks = [
   {
@@ -23,28 +25,25 @@ const navLinks = [
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto top-0 left-0 right-0 z-[100] bg-[#0e0c1f] bg-opacity-100 shadow-md ">
+    <nav className="fixed mx-auto top-0 left-0 right-0 z-[10000] bg-[#292929] bg-opacity-100 shadow-md ">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 ">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
-          EM WEB DEV
+        <Link href={"/"} className="bg-slate-400">
+          <Image src={"/logo2.svg"} alt="logo" width={64} height={64} />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!isNavbarOpen ? (
             <button
               onClick={() => setIsNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-neutral-200 text-neutral-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 text-neutral-200 hover:text-white hover:border-white"
             >
-              <Bars3Icon className="h-5 w-4" />
+              <Bars3Icon className="h-10 w-10" />
             </button>
           ) : (
             <button
               onClick={() => setIsNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-neutral-200 text-neutral-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 text-neutral-200 hover:text-white hover:border-white"
             >
-              <XMarkIcon className="h-5 w-5" />
+              <XMarkIcon className="h-10 w-10" />
             </button>
           )}
         </div>

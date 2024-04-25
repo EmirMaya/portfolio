@@ -65,6 +65,16 @@ const projectsData = [
     gitUrl: "https://github.com/EmirMaya/img-generator-with-replicate.git",
     previewUrl: "https://img-generator-with-replicate.vercel.app/",
   },
+
+  {
+    id: 7,
+    title: "Portfolio",
+    description: "You can see how I created my portfolio!",
+    image: "/images/projects/portfolio.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/portfolio",
+    previewUrl: "https://emirfullstackdev.vercel.app/",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -87,7 +97,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className="text-center text-4xl font-bold text-[#e3e3dc] mt-4 mb-8 md:mb-12 bg-red-500">
         My Projects
       </h2>
       {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
@@ -102,7 +112,10 @@ const ProjectsSection = () => {
           isSelected={tag === "Web"}
         />
       </div> */}
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul
+        ref={ref}
+        className="grid md:grid-cols-3 gap-8 md:gap-12 roboto-condensed-font"
+      >
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

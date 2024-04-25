@@ -5,12 +5,12 @@ import Link from "next/link";
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
 
   return (
-    <div className="bg-[#14112a] rounded-xl h-[370px] md:h-[450px]">
+    <div className="bg-[#2f2f2f] rounded-xl h-[370px] md:h-[450px]">
       <div
         className="h-52 md:h-72 rounded-t-xl relative group"
         style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
       >
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#151515] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
+        <div className="overlay items-center justify-center rounded-t-xl absolute top-0 left-0 w-full h-full bg-[#151515] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
           <Link
             href={gitUrl}
             target="_blank"
@@ -31,7 +31,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
             <h5 className="text-xl font-semibold mb-2">
                 {title}
             </h5>
-            <p className="text-[#6e88a1]">{description}</p>
+            <p className="text-[#b2b1a9]">{description}</p>
       </div>
     </div>
   );

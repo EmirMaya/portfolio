@@ -1,7 +1,20 @@
-import { Roboto_Condensed } from "next/font/google";
+import { Chivo_Mono, Bungee, Gelasio } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto_Condensed({ subsets: ["latin"] });
+const chivo = Chivo_Mono({
+  subsets: ["latin"],
+  variable: "--font-chivo-mono",
+});
+const bungee = Bungee({
+  subsets: ["latin"],
+  weight: '400',
+  variable: "--font-bungee",
+});
+const gelasio = Gelasio({
+  subsets: ["latin"],
+  weight: '400',
+  variable: "--font-gelasio",
+});
 
 export const metadata = {
   title: "Emir Maya - Full Stack Developer",
@@ -11,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={bungee.className}>{children}</body>
     </html>
   );
 }
