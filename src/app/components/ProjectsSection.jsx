@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: "Pecaditos Arequipa",
-    description: "Landing page of a pastry shop",
+    description: "A web page of an industrial pastry shop from Perú",
     image: "/images/projects/pecaditos.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/EmirMaya/pecaditosArequipa",
@@ -28,7 +28,8 @@ const projectsData = [
   {
     id: 3,
     title: "SportBlend",
-    description: "Fullstack Sports Ecommerce with React, redux and Django Rest Framework",
+    description:
+      "Fullstack Sports Ecommerce with React, Redux and Django Rest Framework",
     image: "/images/projects/sportblend.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CodeSystem2022/ec-programadores-juniors.git",
@@ -37,7 +38,8 @@ const projectsData = [
   {
     id: 4,
     title: "Okinawa Sushi",
-    description: "MERN Fullstack Sushi Ecommerce",
+    description:
+      "MERN Fullstack Sushi ordering application with administration panel",
     image: "/images/projects/okinawa.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/EmirMaya/okinawa-sushi-nextjs.git",
@@ -47,11 +49,21 @@ const projectsData = [
   {
     id: 5,
     title: "Hooobank",
-    description: "Landing Page",
+    description: "Landing Page of a web application for payments.",
     image: "/images/projects/hoobank.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/EmirMaya/react-mordern-web-practice.git",
     previewUrl: "https://hoobankweb-rust.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "AI Image Generator",
+    description:
+      "A minimal web that can generate images using Replicate API, just for fun!",
+    image: "/images/projects/image-generator.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/img-generator-with-replicate.git",
+    previewUrl: "https://img-generator-with-replicate.vercel.app/",
   },
 ];
 
