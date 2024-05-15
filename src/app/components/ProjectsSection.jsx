@@ -6,36 +6,6 @@ import ProjectCard from "./ProjectCard";
 
 const projectsData = [
   {
-    id: 1,
-    title: "Pecaditos Arequipa",
-    description: "A web page of an industrial pastry shop from Perú",
-    image: "/images/projects/pecaditos.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/EmirMaya/pecaditosArequipa",
-    previewUrl: "https://pecaditosarequipaokk.000webhostapp.com/index.html",
-  },
-
-  {
-    id: 2,
-    title: "Polo de Innovación Tecnológica Región Sur Mendoza",
-    description: "Landing page of a technological hub in my region",
-    image: "/images/projects/pit-mendoza.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/https://pitregionsurmendoza.000webhostapp.com/",
-  },
-
-  {
-    id: 3,
-    title: "SportBlend",
-    description:
-      "Fullstack Sports Ecommerce with React, Redux and Django Rest Framework",
-    image: "/images/projects/sportblend.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/CodeSystem2022/ec-programadores-juniors.git",
-    previewUrl: "https://ec-programadores-juniors.vercel.app/",
-  },
-  {
     id: 4,
     title: "Okinawa Sushi",
     description:
@@ -64,6 +34,36 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/EmirMaya/img-generator-with-replicate.git",
     previewUrl: "https://img-generator-with-replicate.vercel.app/",
+  },
+  {
+    id: 1,
+    title: "Pecaditos Arequipa",
+    description: "A web page of an industrial pastry shop from Perú",
+    image: "/images/projects/pecaditos.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/pecaditosArequipa",
+    previewUrl: "https://pecaditosarequipaokk.000webhostapp.com/index.html",
+  },
+
+  {
+    id: 2,
+    title: "PIT Región Sur Mendoza",
+    description: "Landing page of a technological hub in my region",
+    image: "/images/projects/pit-mendoza.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "https://pitregionsurmendoza.000webhostapp.com/",
+  },
+
+  {
+    id: 3,
+    title: "SportBlend",
+    description:
+      "Fullstack Sports Ecommerce with React, Redux and Django Rest Framework",
+    image: "/images/projects/sportblend.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/CodeSystem2022/ec-programadores-juniors.git",
+    previewUrl: "https://ec-programadores-juniors.vercel.app/",
   },
 
   {
