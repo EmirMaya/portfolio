@@ -76,24 +76,24 @@ const Hero = () => {
         >
           <div className="lg:absolute lg:top-0 lg:left-[70%] lg:ml-20">
             <div className=" rounded-full  w-[300px] h-[300px] p-4 relative">
-              <div className="rounded-full bg-yellow-500">
-                <Fade cascade fraction={0.8}>
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[0px] z-20 h-[60px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[5px] z-20 h-[50px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[10px] z-20 h-[40px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[15px] z-20 h-[30px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[20px] z-20 h-[20px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[25px] z-20 h-[10px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[30px] z-20 h-[9px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[35px] z-20 h-[8px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[45px] z-20 h-[7px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[50px] z-20 h-[6px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[55px] z-20 h-[5px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[60px] z-20 h-[4px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[65px] z-20 h-[3px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[75px] z-20 h-[2px]" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[80px] z-20 h-[1px]" />
-                </Fade>
+              <div className="rounded-full bg-gradient-to-t from-yellow-500 to-transparent shadow-md shadow-yellow-200 h-[250px] w-[268px]">
+                {/* <Fade cascade fraction={0.8}>
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[0px] z-20 h-[60px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[5px] z-20 h-[50px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[10px] z-20 h-[40px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[15px] z-20 h-[30px rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[20px] z-20 h-[20px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[25px] z-20 h-[10px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[30px] z-20 h-[9px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[35px] z-20 h-[8px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[45px] z-20 h-[7px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[50px] z-20 h-[6px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[55px] z-20 h-[5px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[60px] z-20 h-[4px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[65px] z-20 h-[3px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[75px] z-20 h-[2px] rounded-full" />
+                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[80px] z-20 h-[1px] rounded-full" />
+                </Fade> */}
               </div>
 
               <Image

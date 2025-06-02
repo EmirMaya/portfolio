@@ -5,6 +5,26 @@ import ProjectTag from "./ProjectTag";
 import ProjectCard from "./ProjectCard";
 
 const projectsData = [
+   {
+    id: 8,
+    title: "Google Retro",
+    description:
+      "A retro-style Google search page, made just for fun — coming soon as a Chrome extension.",
+    image: "/images/projects/retro.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/google-search",
+    previewUrl: "https://retro-google.vercel.app/",
+  },
+  {
+    id: 8,
+    title: "Delicias Secas",
+    description:
+      "Complete landing page where customers can place orders via WhatsApp",
+    image: "/images/projects/delicias.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/delicias-secas-landing-page",
+    previewUrl: "https://www.deliciassecas.com.ar/",
+  },
   {
     id: 4,
     title: "Okinawa Sushi",
