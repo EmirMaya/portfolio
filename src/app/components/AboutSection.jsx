@@ -16,6 +16,7 @@ const skills = [
   "Angular",
   "SOLID principles",
   "Git",
+  "PowerApps",
   "Node.js",
   "Express.js",
   "MongoDB",
