@@ -2,100 +2,51 @@
 import Image from "next/image";
 import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
+import { aboutTabs, certifications, education, skills } from "../data/profile";
 
-const skills = [
-  "HTML",
-  "CSS",
-  "SASS",
-  "TailwindCSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.Js",
-  "Redux",
-  "Angular",
-  "SOLID principles",
-  "Git",
-  "PowerApps",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "MySQL",
-  "PostgreSQL",
-];
+const badgeColors = ["#ef4444", "#eab308", "#14b8a6", "#0ea5e9"];
 
-const getRandomColor = () => {
-  const colors = ["#ef4444", "#eab308", "#14b8a6", "#0ea5e9"];
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  return colors[randomIndex];
-};
+const getBadgeColor = (index) => badgeColors[index % badgeColors.length];
 
-const certifications = [
-  "SAP ABAP, Logali Group",
-  "ReactJS, Coderhouse",
-  "Javascript, Coderhouse",
-  "Web Developer, Coderhouse",
-  "Fullstack Web, Egg Education",
-];
-const TAB_DATA = [
-  {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="list-none pl-2 flex flex-wrap justify-center gap-4 roboto-condensed-font">
-        {skills.map((sk) => (
-          <li key={sk}>
-            <span
-              className="inline-flex items-center rounded-md px-2 py-1 text-md font-semibold text-slate-800"
-              style={{ backgroundColor: getRandomColor() }}
-            >
-              {sk}
-            </span>
-          </li>
-        ))}
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
+const Badge = ({ children, colorIndex = 0 }) => (
+  <span
+    className="inline-flex items-center rounded-md px-2 py-1 text-md font-semibold text-slate-800"
+    style={{ backgroundColor: getBadgeColor(colorIndex) }}
+  >
+    {children}
+  </span>
+);
+
+const renderTabContent = (tab) => {
+  if (tab === "education") {
+    return (
       <ul className="list-none pl-2 roboto-condensed-font">
         <li className="text-center">
-          <span
-            className="inline-flex items-center rounded-md px-2 py-1 text-md font-semibold text-slate-800"
-            style={{ backgroundColor: getRandomColor() }}
-          >
-            Technician in Programming <br /> Universidad Tecnológica Nacional,
-            Argentina, San Rafael, Mendoza.
-          </span>
+          <Badge>
+            {education.title} <br /> {education.institution},{" "}
+            {education.location}
+          </Badge>
         </li>
       </ul>
-    ),
-  },
-  {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-none pl-2 flex flex-wrap justify-center gap-4 roboto-condensed-font">
-        {certifications.map((cert) => (
-          <li key={cert}>
-            <span
-              className="inline-flex items-center rounded-md px-2 py-1 text-md font-semibold text-slate-800"
-              style={{ backgroundColor: getRandomColor() }}
-            >
-              {cert}
-            </span>
-          </li>
-        ))}
-      </ul>
-    ),
-  },
-];
+    );
+  }
+
+  const list = tab === "certifications" ? certifications : skills;
+
+  return (
+    <ul className="list-none pl-2 flex flex-wrap justify-center gap-4 roboto-condensed-font">
+      {list.map((item, index) => (
+        <li key={item}>
+          <Badge colorIndex={index}>{item}</Badge>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const handleTabChange = (id) => {
     startTransition(() => {
       setTab(id);
@@ -119,31 +70,17 @@ const AboutSection = () => {
             exceptional applications.
           </p>
           <div className="flex flex-row justify-start mt-8 roboto-condensed-font">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
-            </TabButton>
+            {aboutTabs.map((aboutTab) => (
+              <TabButton
+                key={aboutTab.id}
+                selectTab={() => handleTabChange(aboutTab.id)}
+                active={tab === aboutTab.id}
+              >
+                {aboutTab.title}
+              </TabButton>
+            ))}
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
+          <div className="mt-8">{renderTabContent(tab)}</div>
         </div>
       </div>
     </section>

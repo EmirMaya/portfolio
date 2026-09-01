@@ -1,0 +1,88 @@
+export const projects = [
+  {
+    id: "google-retro",
+    title: "Google Retro",
+    description:
+      "A retro-style Google search page, made just for fun - coming soon as a Chrome extension.",
+    image: "/images/projects/retro.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/google-search",
+    previewUrl: "https://retro-google.vercel.app/",
+  },
+  {
+    id: "delicias-secas",
+    title: "Delicias Secas",
+    description:
+      "Complete landing page where customers can place orders via WhatsApp",
+    image: "/images/projects/delicias.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/delicias-secas-landing-page",
+    previewUrl: "https://www.deliciassecas.com.ar/",
+  },
+  {
+    id: "okinawa-sushi",
+    title: "Okinawa Sushi",
+    description:
+      "MERN Fullstack Sushi ordering application with administration panel",
+    image: "/images/projects/okinawa.jpg",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/okinawa-sushi-nextjs.git",
+    previewUrl: "https://okinawa-sushi-nextjs.vercel.app/",
+  },
+  {
+    id: "hooobank",
+    title: "Hooobank",
+    description: "Landing Page of a web application for payments.",
+    image: "/images/projects/hoobank.jpg",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/react-mordern-web-practice.git",
+    previewUrl: "https://hoobankweb-rust.vercel.app/",
+  },
+  {
+    id: "ai-image-generator",
+    title: "AI Image Generator",
+    description:
+      "A minimal web that can generate images using Replicate API, just for fun!",
+    image: "/images/projects/image-generator.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/img-generator-with-replicate.git",
+    previewUrl: "https://img-generator-with-replicate.vercel.app/",
+  },
+  {
+    id: "pecaditos-arequipa",
+    title: "Pecaditos Arequipa",
+    description: "A web page of an industrial pastry shop from Perú",
+    image: "/images/projects/pecaditos.jpg",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/pecaditosArequipa",
+    previewUrl: "https://pecaditosarequipaokk.000webhostapp.com/index.html",
+  },
+  {
+    id: "pit-region-sur-mendoza",
+    title: "PIT Región Sur Mendoza",
+    description: "Landing page of a technological hub in my region",
+    image: "/images/projects/pit-mendoza.jpg",
+    tags: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "https://pitregionsurmendoza.000webhostapp.com/",
+  },
+  {
+    id: "sportblend",
+    title: "SportBlend",
+    description:
+      "Fullstack Sports Ecommerce with React, Redux and Django Rest Framework",
+    image: "/images/projects/sportblend.jpg",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/CodeSystem2022/ec-programadores-juniors.git",
+    previewUrl: "https://ec-programadores-juniors.vercel.app/",
+  },
+  {
+    id: "portfolio",
+    title: "Portfolio",
+    description: "You can see how I created my portfolio!",
+    image: "/images/projects/portfolio.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/portfolio",
+    previewUrl: "https://emirfullstackdev.vercel.app/",
+  },
+];

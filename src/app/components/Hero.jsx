@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
-import { Slide } from "react-awesome-reveal";
 const Hero = () => {
   return (
     <section className="lg:py-16">
@@ -15,12 +14,10 @@ const Hero = () => {
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <div className="col-span-7 place-self-center mb-4 relative">
-            <Slide cascade>
-              <div className="bg-gradient-to-r bg-teal-500 absolute h-[44px] w-full md:h-[60px] " />
-              <div className="bg-gradient-to-r bg-sky-500 absolute h-[44px] w-full top-[40px] md:h-[60px] md:top-[60px]" />
-              <div className="bg-gradient-to-r bg-yellow-500 absolute h-[44px] w-full top-[80px]  md:h-[60px] md:top-[120px]" />
-              <div className="bg-gradient-to-r bg-red-500 absolute h-[44px] w-full top-[120px]  md:h-[60px] md:top-[180px]" />
-            </Slide>
+            <div className="bg-gradient-to-r bg-teal-500 absolute h-[44px] w-full md:h-[60px] " />
+            <div className="bg-gradient-to-r bg-sky-500 absolute h-[44px] w-full top-[40px] md:h-[60px] md:top-[60px]" />
+            <div className="bg-gradient-to-r bg-yellow-500 absolute h-[44px] w-full top-[80px]  md:h-[60px] md:top-[120px]" />
+            <div className="bg-gradient-to-r bg-red-500 absolute h-[44px] w-full top-[120px]  md:h-[60px] md:top-[180px]" />
             <h1 className="text-[#e3e3dc] px-4 h-[132px] z-[1000] relative text-start text-4xl sm:text-5xl lg:text-6xl w-full  font-extrabold mb-4">
               <span className="">
                 Hello,
@@ -77,23 +74,6 @@ const Hero = () => {
           <div className="lg:absolute lg:top-0 lg:left-[70%] lg:ml-20">
             <div className=" rounded-full  w-[300px] h-[300px] p-4 relative">
               <div className="rounded-full bg-gradient-to-t from-yellow-500 to-transparent shadow-md shadow-yellow-200 h-[250px] w-[268px]">
-                {/* <Fade cascade fraction={0.8}>
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[0px] z-20 h-[60px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[5px] z-20 h-[50px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[10px] z-20 h-[40px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[15px] z-20 h-[30px rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[20px] z-20 h-[20px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[25px] z-20 h-[10px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[30px] z-20 h-[9px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[35px] z-20 h-[8px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[45px] z-20 h-[7px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[50px] z-20 h-[6px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[55px] z-20 h-[5px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[60px] z-20 h-[4px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[65px] z-20 h-[3px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[75px] z-20 h-[2px] rounded-full" />
-                  <div className="bg-gradient-to-b from-transparent to-red-500 relative top-[80px] z-20 h-[1px] rounded-full" />
-                </Fade> */}
               </div>
 
               <Image
