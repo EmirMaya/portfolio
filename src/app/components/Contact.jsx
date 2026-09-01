@@ -5,31 +5,45 @@ import Image from "next/image";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
     const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+      website: formData.get("website"),
     };
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (response.status === 200) {
-      console.log("Sent!");
+      const resData = await response.json();
+
+      if (!response.ok) {
+        setErrorMessage(
+          resData?.error || "Something went wrong. Please try again."
+        );
+        return;
+      }
+
       setEmailSubmitted(true);
+    } catch {
+      setErrorMessage("Unable to send this message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -75,6 +89,14 @@ const Contact = () => {
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="website"
+              tabIndex="-1"
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <div className="mb-6 roboto-condensed-font">
               <label
                 htmlFor="email"
@@ -87,6 +109,9 @@ const Contact = () => {
                 name="email"
                 id="email"
                 placeholder="Email"
+                autoComplete="email"
+                required
+                maxLength={254}
                 className="bg-[#3b3b3b]  rounded-xl border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
               />
               <label
@@ -100,12 +125,14 @@ const Contact = () => {
                 name="subject"
                 id="subject"
                 placeholder="Subject"
+                required
+                maxLength={120}
                 className="bg-[#3b3b3b]  rounded-xl border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
               />
             </div>
             <div className="mb-6 roboto-condensed-font">
               <label
-                htmlFor="email"
+                htmlFor="message"
                 className="text-white block mb-2 text-sm font-medium"
               >
                 Message
@@ -114,14 +141,22 @@ const Contact = () => {
                 name="message"
                 id="message"
                 placeholder="Message..."
+                required
+                maxLength={3000}
                 className="bg-[#3b3b3b]  rounded-xl border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
               />
             </div>
+            {errorMessage ? (
+              <p className="text-red-400 text-sm mb-4" role="alert">
+                {errorMessage}
+              </p>
+            ) : null}
             <button
               type="submit"
-              className="bg-sky-500 hover:bg-teal-500 roboto-condensed-font rounded-full text-[#fdfbea] font-semibold py-2 px-5 w-full"
+              disabled={isSubmitting}
+              className="bg-sky-500 hover:bg-teal-500 disabled:cursor-not-allowed disabled:opacity-60 roboto-condensed-font rounded-full text-[#fdfbea] font-semibold py-2 px-5 w-full"
             >
-              Send Message!
+              {isSubmitting ? "Sending..." : "Send Message!"}
             </button>
           </form>
         )}

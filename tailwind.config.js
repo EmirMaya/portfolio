@@ -1,5 +1,3 @@
-import Config from "tailwindcss/config";
-
 const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
