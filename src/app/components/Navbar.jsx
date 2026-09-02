@@ -19,6 +19,9 @@ const Navbar = () => {
           {!isNavbarOpen ? (
             <button
               onClick={() => setIsNavbarOpen(true)}
+              aria-label="Open navigation menu"
+              aria-expanded={isNavbarOpen}
+              aria-controls="mobile-navigation"
               className="flex items-center px-3 py-2 text-neutral-200 hover:text-white hover:border-white"
             >
               <Bars3Icon className="h-10 w-10" />
@@ -26,6 +29,9 @@ const Navbar = () => {
           ) : (
             <button
               onClick={() => setIsNavbarOpen(false)}
+              aria-label="Close navigation menu"
+              aria-expanded={isNavbarOpen}
+              aria-controls="mobile-navigation"
               className="flex items-center px-3 py-2 text-neutral-200 hover:text-white hover:border-white"
             >
               <XMarkIcon className="h-10 w-10" />
@@ -42,7 +48,13 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {isNavbarOpen ? <Overlay links={navLinks} /> : null}
+      {isNavbarOpen ? (
+        <Overlay
+          id="mobile-navigation"
+          links={navLinks}
+          onNavigate={() => setIsNavbarOpen(false)}
+        />
+      ) : null}
     </nav>
   );
 };

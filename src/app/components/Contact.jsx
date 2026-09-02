@@ -52,8 +52,6 @@ const Contact = () => {
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative "
     >
-      {/* <div className='className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-400 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"'></div> */}
-
       <div className="z-10">
         <h5 className="text-xl md:text-3xl bg-sky-500 pl-1 font-bold text-white my-2">
           Let&apos;s Connect
@@ -64,7 +62,12 @@ const Contact = () => {
           anytime - I&apos;m here to chat or answer any questions you may have!
         </p>
         <div className="socials flex flex-row items-center gap-2 ">
-          <Link href={"https://github.com/EmirMaya"} target="_blank">
+          <Link
+            href={"https://github.com/EmirMaya"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
             <Image
               src={"/images/github.svg"}
               alt="github"
@@ -72,7 +75,12 @@ const Contact = () => {
               height={32}
             />
           </Link>
-          <Link href={"https://www.linkedin.com/in/emirmaya/"} target="_blank">
+          <Link
+            href={"https://www.linkedin.com/in/emirmaya/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
             <Image
               src={"/images/linkedin.svg"}
               alt="linkedin"
