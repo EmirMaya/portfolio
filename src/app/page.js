@@ -7,10 +7,10 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#292929]">
+    <main className="site-background flex min-h-screen flex-col">
       <Navbar />
-      <div className="container mt-24 mx-auto px-12 py-4">
-        <Hero />
+      <Hero />
+      <div className="relative z-10 container mx-auto px-6 py-4 sm:px-12">
         <div>
           <AboutSection />
           <ProjectsSection />

@@ -1,0 +1,53 @@
+<svg
+  viewBox="0 0 1920 1080"
+  preserveAspectRatio="xMinYMin meet"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <style>
+    .band {
+      fill: none;
+      stroke-width: 108;
+      stroke-linecap: butt;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: reveal 1.55s cubic-bezier(.65, 0, .2, 1) .16s both;
+    }
+
+    @keyframes reveal {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .band {
+        animation: none;
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+
+  <!--
+    Poppins 700 reference size: 96 units.
+    Bands: 108 units. Centre spacing: 114 units. Constant visible gap: 6 units.
+    The yellow centre line uses the same 300-unit radius in both turns.
+    Red/cyan are exact parallel offsets, so the 6-unit gap stays constant.
+  -->
+  <path
+    class="band"
+    pathLength="1"
+    stroke="#FF3021"
+    d="M -80 70 H 1200 A 414 414 0 0 1 1614 484 A 186 186 0 0 0 1800 670 H 2020"
+  />
+  <path
+    class="band"
+    pathLength="1"
+    stroke="#F5C964"
+    d="M -80 184 H 1200 A 300 300 0 0 1 1500 484 A 300 300 0 0 0 1800 784 H 2020"
+  />
+  <path
+    class="band"
+    pathLength="1"
+    stroke="#00C7D2"
+    d="M -80 298 H 1200 A 186 186 0 0 1 1386 484 A 414 414 0 0 0 1800 898 H 2020"
+  />
+</svg>

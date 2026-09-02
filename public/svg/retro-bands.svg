@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .band {
+      fill: none;
+      stroke-width: 108;
+      stroke-linecap: butt;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: reveal 1.45s cubic-bezier(.65, 0, .2, 1) .18s both;
+    }
+
+    @keyframes reveal {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .band { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <path class="band" pathLength="1" stroke="#FF3021" d="M -60 460 H 1000 A 500 500 0 0 1 1500 960 V 1040" />
+  <path class="band" pathLength="1" stroke="#F5C964" d="M -60 574 H 1000 A 386 386 0 0 1 1386 960 V 1040" />
+  <path class="band" pathLength="1" stroke="#00C7D2" d="M -60 688 H 1000 A 272 272 0 0 1 1272 960 V 1040" />
+</svg>
