@@ -12,7 +12,7 @@ const desktopRows = [
     y: 70,
     rectX: 154,
     rectY: 16,
-    rectWidth: 582,
+    rectWidth: 470,
     textX: 158,
   },
   {
@@ -20,7 +20,7 @@ const desktopRows = [
     y: 184,
     rectX: 209,
     rectY: 130,
-    rectWidth: 668,
+    rectWidth: 680,
     textX: 213,
   },
   {
@@ -28,7 +28,7 @@ const desktopRows = [
     y: 298,
     rectX: 296,
     rectY: 244,
-    rectWidth: 530,
+    rectWidth: 540,
     textX: 300,
   },
 ];
