@@ -1,90 +1,38 @@
-"use client";
-import Image from "next/image";
-import React, { useState, useTransition } from "react";
-import TabButton from "./TabButton";
-import { aboutTabs, certifications, education, skills } from "../data/profile";
+import SkillsList from "./about/SkillsList";
+import { certifications, education, skillGroups } from "../data/profile";
 
-const badgeColors = ["#ef4444", "#eab308", "#14b8a6", "#0ea5e9"];
-
-const getBadgeColor = (index) => badgeColors[index % badgeColors.length];
-
-const Badge = ({ children, colorIndex = 0 }) => (
-  <span
-    className="inline-flex items-center rounded-md px-2 py-1 text-md font-semibold text-slate-800"
-    style={{ backgroundColor: getBadgeColor(colorIndex) }}
-  >
-    {children}
-  </span>
-);
-
-const renderTabContent = (tab) => {
-  if (tab === "education") {
-    return (
-      <ul className="list-none pl-2 roboto-condensed-font">
-        <li className="text-center">
-          <Badge>
-            {education.title} <br /> {education.institution},{" "}
-            {education.location}
-          </Badge>
-        </li>
-      </ul>
-    );
-  }
-
-  const list = tab === "certifications" ? certifications : skills;
-
+export default function AboutSection() {
   return (
-    <ul className="list-none pl-2 flex flex-wrap justify-center gap-4 roboto-condensed-font">
-      {list.map((item, index) => (
-        <li key={item}>
-          <Badge colorIndex={index}>{item}</Badge>
-        </li>
-      ))}
-    </ul>
-  );
-};
+    <section id="about" aria-labelledby="about-title" className="max-w-3xl scroll-mt-28 text-site-cream">
+      <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-site-cream/55">
+        About me
+      </p>
+      <h2 id="about-title" className="text-4xl font-bold tracking-tight sm:text-5xl">
+        I&apos;m Emir<span className="text-strong-cyan">.</span>
+      </h2>
+      <p className="mt-4 max-w-md text-sm leading-relaxed text-site-cream/70 sm:text-base">
+        Full-stack developer. Clean interfaces, reliable backends.
+      </p>
 
-const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
-  const [, startTransition] = useTransition();
-  const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
-  };
-  return (
-    <section className="text-white mt-[100px]" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image className="rounded-xl" src="/images/about.jpg" alt="about" width={450} height={450} />
+      <SkillsList groups={skillGroups} />
 
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl pl-1 font-bold text-[#e3e3dc] mb-4 w-full bg-yellow-500">About Me</h2>
-          <p className="text-base text-[#f2f2ea] lg:text-lg roboto-condensed-font">
-            I&apos;m a versatile web developer proficient in both frontend and
-            backend technologies, dedicated to crafting engaging and dynamic web
-            solutions. My toolkit includes JavaScript, React, Redux, Angular,
-            Node.js, Express, PostgreSQL, HTML, CSS, TailwindCSS, SASS and Git.
-            Continuously seeking growth opportunities, I thrive on learning new
-            concepts and refining my abilities. Collaborative by nature,
-            I&apos;m eager to join forces with fellow developers to produce
-            exceptional applications.
-          </p>
-          <div className="flex flex-row justify-start mt-8 roboto-condensed-font">
-            {aboutTabs.map((aboutTab) => (
-              <TabButton
-                key={aboutTab.id}
-                selectTab={() => handleTabChange(aboutTab.id)}
-                active={tab === aboutTab.id}
-              >
-                {aboutTab.title}
-              </TabButton>
+      <details className="group mt-5 text-sm">
+        <summary className="flex min-h-11 w-fit cursor-pointer list-none items-center gap-3 rounded-sm text-site-cream/60 transition-colors hover:text-site-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-strong-cyan motion-reduce:transition-none [&::-webkit-details-marker]:hidden">
+          Education & certifications
+          <span aria-hidden="true" className="text-lg text-strong-cyan transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
+        </summary>
+        <div className="mt-3 border-l border-strong-cyan/40 pl-4 text-xs leading-relaxed text-site-cream/65 sm:text-sm">
+          <h3 className="font-medium text-site-cream">{education.title}</h3>
+          <p className="mt-1">{education.institution}</p>
+          <p>{education.location}</p>
+          <h3 className="mb-2 mt-4 font-medium text-site-cream">Certifications</h3>
+          <ul className="space-y-1">
+            {certifications.map((certification) => (
+              <li key={certification}>{certification}</li>
             ))}
-          </div>
-          <div className="mt-8">{renderTabContent(tab)}</div>
+          </ul>
         </div>
-      </div>
+      </details>
     </section>
   );
-};
-
-export default AboutSection;
+}

@@ -1,22 +1,30 @@
-export const skills = [
-  "HTML",
-  "CSS",
-  "SASS",
-  "TailwindCSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.Js",
-  "Redux",
-  "Angular",
-  "SOLID principles",
-  "Git",
-  "PowerApps",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "MySQL",
-  "PostgreSQL",
+export const skillGroups = [
+  {
+    id: "frontend",
+    label: "Frontend",
+    items: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Angular",
+      "Redux",
+      "HTML",
+      "CSS",
+      "TailwindCSS",
+      "SASS",
+    ],
+  },
+  {
+    id: "backend",
+    label: "Backend",
+    items: ["Node.js", "Express.js", "PostgreSQL", "MongoDB", "MySQL"],
+  },
+  {
+    id: "workflow",
+    label: "Workflow",
+    items: ["Git", "SOLID principles", "PowerApps"],
+  },
 ];
 
 export const education = {
@@ -31,19 +39,4 @@ export const certifications = [
   "Javascript, Coderhouse",
   "Web Developer, Coderhouse",
   "Fullstack Web, Egg Education",
-];
-
-export const aboutTabs = [
-  {
-    title: "Skills",
-    id: "skills",
-  },
-  {
-    title: "Education",
-    id: "education",
-  },
-  {
-    title: "Certifications",
-    id: "certifications",
-  },
 ];

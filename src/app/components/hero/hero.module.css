@@ -1,0 +1,102 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-block-size: 100svh;
+  padding-block: clamp(9rem, 18svh, 13rem) 2rem;
+  overflow: clip;
+  color: var(--color-site-cream);
+}
+
+.artwork {
+  grid-area: 1 / 1;
+  position: relative;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.compact {
+  display: none;
+}
+
+.bands {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.band {
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 0;
+  animation: draw-band 1.8s cubic-bezier(0.55, 0, 0.25, 1) var(--hero-delay) both;
+}
+
+.label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: var(--hero-label-height);
+  padding-inline: 0.07em;
+  transform: translateY(-50%);
+  background: var(--color-site-ink);
+  font-size: var(--hero-font-size);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: reveal-label 0.45s ease-out var(--hero-delay) both;
+}
+
+@keyframes draw-band {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes reveal-label {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-block-size: auto;
+    padding-block: clamp(8rem, 20svh, 12rem) clamp(3rem, 10vw, 5rem);
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .compact {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    min-block-size: auto;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .band,
+  .label {
+    animation: none;
+  }
+}

@@ -1,15 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-site-ink: #050505;
+  --color-site-cream: #f7f3ea;
+  --color-strong-cyan: #00ced8;
+  --color-bright-ocean: #278BD6;
+  --color-violet-twilight: #5146C8;
+}
+
 .roboto-condensed-font {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: inherit;
 }
 
 .chivo-mono-font {
-  font-family: "Chivo Mono", monospace;
+  font-family: inherit;
 }
-
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -27,14 +32,24 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-site-ink);
 }
 
-.drop-image {
-  filter: drop-shadow(0 0 0.75rem #ea5308);
+.site-background {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-site-ink);
+}
+
+.site-background::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgb(5 5 5 / 18%), rgb(5 5 5 / 30%)), url("/images/bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

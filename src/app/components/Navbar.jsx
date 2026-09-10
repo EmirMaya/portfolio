@@ -10,9 +10,9 @@ import { navLinks } from "../data/navigation";
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto top-0 left-0 right-0 z-[10000] bg-[#292929] bg-opacity-100 shadow-md ">
+    <nav className="fixed mx-auto top-0 left-0 right-0 z-[10000]">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 ">
-        <Link href={"/"} className="bg-slate-400">
+        <Link href={"/"}>
           <Image src={"/logo2.svg"} alt="logo" width={64} height={64} />
         </Link>
         <div className="mobile-menu block md:hidden">
