@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-site-ink: #050505;
+  --color-site-cream: #f7f3ea;
+  --color-strong-cyan: #00ced8;
+  --color-tuscan-sun: #f5c964;
+  --color-electric-red: #ff3021;
+}
+
 .roboto-condensed-font {
   font-family: inherit;
 }
@@ -24,13 +32,13 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #050505;
+  background-color: var(--color-site-ink);
 }
 
 .site-background {
   position: relative;
   isolation: isolate;
-  background-color: #050505;
+  background-color: var(--color-site-ink);
 }
 
 .site-background::before {
@@ -44,65 +52,4 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.hero-art {
-  transform: translateY(var(--hero-art-offset-y));
-}
-
-.hero-section {
-  --hero-art-offset-y: clamp(8rem, 17vh, 12rem);
-}
-
-.hero-band {
-  fill: none;
-  stroke-width: 108;
-  stroke-linecap: butt;
-  stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: reveal-band 1.55s cubic-bezier(0.65, 0, 0.2, 1) 0.16s both;
-}
-
-.hero-band--mobile {
-  stroke-width: 56;
-  animation-duration: 1.35s;
-  animation-delay: 0.12s;
-}
-
-.hero-art-headline {
-  fill: #f7f3ea;
-  font-family: inherit;
-  font-size: 96px;
-  font-weight: 900;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.hero-art-headline--mobile {
-  font-size: 46px;
-}
-
-@keyframes reveal-band {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .site-background::before {
-    background-position: center center;
-    background-size: cover;
-  }
-
-  .hero-section {
-    --hero-art-offset-y: clamp(5.5rem, 12vh, 7rem);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-band {
-    animation: none;
-    stroke-dashoffset: 0;
-  }
 }
