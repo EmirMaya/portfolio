@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="fixed mx-auto top-0 left-0 right-0 z-[10000]">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 ">
         <Link href={"/"}>
-          <Image src={"/logo2.svg"} alt="logo" width={64} height={64} />
+          <Image src={"/images/logo.png"} alt="logo" width={74} height={74} />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!isNavbarOpen ? (
