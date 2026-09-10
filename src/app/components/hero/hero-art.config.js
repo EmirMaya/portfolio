@@ -1,6 +1,6 @@
 export const heroRows = [
-  { text: "Building", color: "var(--color-electric-red)" },
-  { text: "Modern Web", color: "var(--color-tuscan-sun)" },
+  { text: "Building", color: "var(--color-violet-twilight)" },
+  { text: "Modern Web", color: "var(--color-bright-ocean)" },
   { text: "Products", color: "var(--color-strong-cyan)" },
 ];
 

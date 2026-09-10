@@ -9,10 +9,11 @@ export default function Home() {
   return (
     <main className="site-background flex min-h-screen flex-col">
       <Navbar />
-      <Hero />
+      <Hero>
+        <AboutSection />
+      </Hero>
       <div className="relative z-10 container mx-auto px-6 py-4 sm:px-12">
         <div>
-          <AboutSection />
           <ProjectsSection />
           <Contact />
         </div>
