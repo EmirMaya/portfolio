@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import styles from "./contact.module.css";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -48,55 +50,66 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative "
-    >
-      <div className="z-10">
-        <h5 className="text-xl md:text-3xl bg-sky-500 pl-1 font-bold text-white my-2">
-          Let&apos;s Connect
-        </h5>
-        <p className="text-[#e9e8dd] mb-4 max-w-md roboto-condensed-font">
-          {" "}
+    <section id="contact" aria-labelledby="contact-title" className={styles.section}>
+      <div className={styles.intro}>
+        <p className={styles.eyebrow}>Get in touch / Contact</p>
+        <h2 id="contact-title" className={styles.title}>
+          Let&apos;s<br />connect<span>.</span>
+        </h2>
+        <div className={styles.stripes} aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <p className={styles.description}>
           I&apos;m actively seeking new opportunities. Feel free to reach out
           anytime - I&apos;m here to chat or answer any questions you may have!
         </p>
-        <div className="socials flex flex-row items-center gap-2 ">
+        <div className={styles.socials}>
           <Link
-            href={"https://github.com/EmirMaya"}
+            href="https://github.com/EmirMaya"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub profile"
+            aria-label="GitHub profile (opens in a new tab)"
+            className={styles.socialLink}
           >
-            <Image
-              src={"/images/github.svg"}
-              alt="github"
-              width={32}
-              height={32}
-            />
+            <Image src="/images/github.svg" alt="" width={24} height={24} />
+            GitHub
+            <ArrowUpRightIcon aria-hidden="true" />
           </Link>
           <Link
-            href={"https://www.linkedin.com/in/emirmaya/"}
+            href="https://www.linkedin.com/in/emirmaya/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
+            aria-label="LinkedIn profile (opens in a new tab)"
+            className={styles.socialLink}
           >
-            <Image
-              src={"/images/linkedin.svg"}
-              alt="linkedin"
-              width={64}
-              height={64}
-            />
+            <Image src="/images/linkedin.svg" alt="" width={24} height={24} />
+            LinkedIn
+            <ArrowUpRightIcon aria-hidden="true" />
           </Link>
         </div>
       </div>
-      <div>
+      <div className={styles.panel}>
+        <div className={styles.panelHeader}>
+          <h3 id="contact-form-title">Send a message</h3>
+          <span className={styles.colorMarks} aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </div>
         {emailSubmitted ? (
-          <p className="text-emerald-500 text-sm mt-2">
+          <p className={styles.success} role="status">
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+            aria-labelledby="contact-form-title"
+            aria-busy={isSubmitting}
+          >
             <input
               type="text"
               name="website"
@@ -105,66 +118,55 @@ const Contact = () => {
               className="hidden"
               aria-hidden="true"
             />
-            <div className="mb-6 roboto-condensed-font">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Email
-              </label>
+            <div className={styles.field}>
+              <label htmlFor="email" className={styles.label}>Email</label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Email"
+                placeholder="you@example.com"
                 autoComplete="email"
                 required
                 maxLength={254}
-                className="bg-[#3b3b3b]  rounded-xl border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
+                className={styles.input}
               />
-              <label
-                htmlFor="subject"
-                className="text-white block my-2 text-sm font-medium"
-              >
-                Subject
-              </label>
+            </div>
+            <div className={styles.field}>
+              <label htmlFor="subject" className={styles.label}>Subject</label>
               <input
                 type="text"
                 name="subject"
                 id="subject"
-                placeholder="Subject"
+                placeholder="What do you have in mind?"
                 required
                 maxLength={120}
-                className="bg-[#3b3b3b]  rounded-xl border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
+                className={styles.input}
               />
             </div>
-            <div className="mb-6 roboto-condensed-font">
-              <label
-                htmlFor="message"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Message
-              </label>
+            <div className={styles.field}>
+              <label htmlFor="message" className={styles.label}>Message</label>
               <textarea
                 name="message"
                 id="message"
-                placeholder="Message..."
+                placeholder="Tell me a little about your project..."
+                rows={5}
                 required
                 maxLength={3000}
-                className="bg-[#3b3b3b]  rounded-xl border border-neutral-400 placeholder-[#6e88a1] text-gray-100 text-sm block w-full p-2.5"
+                className={`${styles.input} ${styles.message}`}
               />
             </div>
             {errorMessage ? (
-              <p className="text-red-400 text-sm mb-4" role="alert">
+              <p className={styles.error} role="alert">
                 {errorMessage}
               </p>
             ) : null}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-sky-500 hover:bg-teal-500 disabled:cursor-not-allowed disabled:opacity-60 roboto-condensed-font rounded-full text-[#fdfbea] font-semibold py-2 px-5 w-full"
+              className={styles.submit}
             >
               {isSubmitting ? "Sending..." : "Send Message!"}
+              <ArrowUpRightIcon aria-hidden="true" />
             </button>
           </form>
         )}
