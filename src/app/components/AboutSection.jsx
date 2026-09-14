@@ -1,4 +1,5 @@
 import SkillsList from "./about/SkillsList";
+import SectionTitle from "./SectionTitle";
 import { certifications, education, skillGroups } from "../data/profile";
 
 export default function AboutSection() {
@@ -7,9 +8,9 @@ export default function AboutSection() {
       <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-site-cream/55">
         About me
       </p>
-      <h2 id="about-title" className="text-4xl font-bold tracking-tight sm:text-5xl">
+      <SectionTitle id="about-title" className="text-[clamp(2.5rem,6.5vw,5.75rem)] font-black uppercase leading-none tracking-[-0.055em] break-words">
         I&apos;m Emir<span className="text-strong-cyan">.</span>
-      </h2>
+      </SectionTitle>
       <p className="mt-4 max-w-md text-sm leading-relaxed text-site-cream/70 sm:text-base">
         Full-stack developer. Clean interfaces, reliable backends.
       </p>

@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import SectionTitle from "./SectionTitle";
+import AnimatedStripes from "./AnimatedStripes";
 import { projects } from "../data/projects";
 import styles from "./projects.module.css";
 
@@ -8,14 +10,10 @@ export default function ProjectsSection() {
       <header className={styles.header}>
         <p className={styles.eyebrow}>Selected work / Portfolio</p>
         <div className={styles.titleBand}>
-          <h2 id="projects-title" className={styles.title}>
+          <SectionTitle id="projects-title" className={styles.title}>
             My projects<span>.</span>
-          </h2>
-          <div className={styles.stripes} aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
+          </SectionTitle>
+          <AnimatedStripes className={styles.stripes} />
         </div>
         <div className={styles.intro}>
           <p>A selection of things I&apos;ve built for the web.</p>
