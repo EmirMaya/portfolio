@@ -1,4 +1,44 @@
 export const projects = [
+   {
+    id: "apolo",
+    title: "Apolo Hard Training",
+    description:
+      "Website for booking recovery sessions and Pilates classes.",
+    image: "/images/projects/apolo.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/centro-apolo.git",
+    previewUrl: "https://apolotraining.vercel.app/recovery",
+  },
+  {
+    id: "Ul",
+    title: "Ultima Línea",
+    description:
+      "Online store for current and retro soccer jerseys.",
+    image: "/images/projects/ul.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/Ultima-Linea-Development/ultima-linea-web.git",
+    previewUrl: "https://ultimalinea.com.ar/",
+  },
+   {
+    id: "bitcoin",
+    title: "BitAtlas",
+    description:
+      "Website for viewing Bitcoin charts, prices, and more.",
+    image: "/images/projects/bitatlas.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/BitcoinCharts.git",
+    previewUrl: "https://bitcoin-charts-three.vercel.app/rainbow",
+  },
+  {
+    id: "tymo",
+    title: "Tymo",
+    description:
+      "Website for tracking work hours at my job.",
+    image: "/images/projects/tymo.png",
+    tags: ["All", "Web"],
+    gitUrl: "https://github.com/EmirMaya/tymo.git",
+    previewUrl: "https://tymo.vercel.app/",
+  },
   {
     id: "google-retro",
     title: "Google Retro",
