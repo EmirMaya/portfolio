@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import styles from "./contact.module.css";
+import SectionTitle from "./SectionTitle";
+import AnimatedStripes from "./AnimatedStripes";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -53,14 +55,10 @@ const Contact = () => {
     <section id="contact" aria-labelledby="contact-title" className={styles.section}>
       <div className={styles.intro}>
         <p className={styles.eyebrow}>Get in touch / Contact</p>
-        <h2 id="contact-title" className={styles.title}>
+        <SectionTitle id="contact-title" className={styles.title}>
           Let&apos;s<br />connect<span>.</span>
-        </h2>
-        <div className={styles.stripes} aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
+        </SectionTitle>
+        <AnimatedStripes className={styles.stripes} />
         <p className={styles.description}>
           I&apos;m actively seeking new opportunities. Feel free to reach out
           anytime - I&apos;m here to chat or answer any questions you may have!
