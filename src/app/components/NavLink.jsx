@@ -1,10 +1,13 @@
-import React from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import styles from "./navbar.module.css";
 
-const NavLink = ({href, title}) => {
+export default function NavLink({ href, title, onClick, mobile = false, number }) {
   return (
-    <Link className='block py-2 pl-3 pr-4 text-white sm:text-xl rounded md:p-0 hover:text-[#91caff]' href={href}>{title}</Link>
-  )
+    <Link className={styles.navLink} href={href} onClick={onClick}>
+      {mobile && <span className={styles.linkNumber} aria-hidden="true">{String(number).padStart(2, "0")}</span>}
+      <span className={styles.linkText}>{title}</span>
+      {mobile && <ArrowUpRightIcon className={styles.linkArrow} aria-hidden="true" />}
+    </Link>
+  );
 }
-
-export default NavLink
