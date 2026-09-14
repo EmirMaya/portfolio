@@ -1,47 +1,44 @@
-"use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/projects";
+import styles from "./projects.module.css";
 
-const ProjectsSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
+export default function ProjectsSection() {
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-[#e3e3dc] mt-4 mb-8 md:mb-12 bg-red-500">
-        My Projects
-      </h2>
-      <ul
-        ref={ref}
-        className="grid md:grid-cols-3 gap-8 md:gap-12 roboto-condensed-font"
-      >
+    <section id="projects" aria-labelledby="projects-title" className={styles.section}>
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Selected work / Portfolio</p>
+        <div className={styles.titleBand}>
+          <h2 id="projects-title" className={styles.title}>
+            My projects<span>.</span>
+          </h2>
+          <div className={styles.stripes} aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+        <div className={styles.intro}>
+          <p>A selection of things I&apos;ve built for the web.</p>
+          <span className={styles.count}>
+            {String(projects.length).padStart(2, "0")} projects
+          </span>
+        </div>
+      </header>
+
+      <ul className={styles.grid}>
         {projects.map((project, index) => (
-          <motion.li
-            key={project.id}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
+          <li key={project.id} className={styles.item}>
             <ProjectCard
               title={project.title}
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              number={index + 1}
             />
-          </motion.li>
+          </li>
         ))}
       </ul>
     </section>
   );
-};
-
-export default ProjectsSection;
+}

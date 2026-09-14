@@ -1,46 +1,57 @@
-import React from "react";
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
+import { ArrowUpRightIcon, CodeBracketIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import styles from "./projects.module.css";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+export default function ProjectCard({ imgUrl, title, description, gitUrl, previewUrl, number }) {
+  const hasSource = gitUrl && gitUrl !== "/";
+
   return (
-    <div className="bg-[#2f2f2f] rounded-xl h-[370px] md:h-[450px]">
-      <div className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden">
+    <article className={styles.card}>
+      <div className={styles.cardHeader}>
+        <span>Web project</span>
+        {number != null && (
+          <span aria-hidden="true">No. {String(number).padStart(2, "0")}</span>
+        )}
+      </div>
+      <div className={styles.preview}>
         <Image
           src={imgUrl}
-          alt={`${title} preview`}
+          alt={`${title} website preview`}
           fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover"
+          sizes="(min-width: 1536px) 432px, (min-width: 1280px) 347px, (min-width: 1024px) 448px, (min-width: 768px) 320px, (min-width: 640px) 544px, calc(100vw - 48px)"
+          className={styles.image}
         />
-        <div className="overlay items-center justify-center rounded-t-xl absolute top-0 left-0 w-full h-full bg-[#151515] bg-opacity-0 hidden group-hover:flex group-focus-within:flex group-hover:bg-opacity-80 group-focus-within:bg-opacity-80 transition-all duration-500">
-          <Link
-            href={gitUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${title} source code`}
-            className="h-14 w-14 mr-2 border-2 relative border-white hover:border-white group/link"
-          >
-            <CodeBracketIcon className="h-10 w-10 text-neutral-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
-          <Link
-            href={previewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Open ${title} live preview`}
-            className="h-14 w-14 mr-2 border-2 relative border-white hover:border-white group/link"
-          >
-            <EyeIcon className="h-10 w-10 text-neutral-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
+      </div>
+      <div className={styles.content}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.description}>{description}</p>
+        <div className={styles.actions}>
+          {previewUrl && (
+            <a
+              href={previewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${title} live site (opens in a new tab)`}
+              className={styles.primaryLink}
+            >
+              Live site
+              <ArrowUpRightIcon aria-hidden="true" />
+            </a>
+          )}
+          {hasSource && (
+            <a
+              href={gitUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${title} source code (opens in a new tab)`}
+              className={styles.sourceLink}
+            >
+              <CodeBracketIcon aria-hidden="true" />
+              Code
+            </a>
+          )}
         </div>
       </div>
-      <div className="text-white rounded-b-xl mt-3  py-6 px-4">
-        <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#b2b1a9]">{description}</p>
-      </div>
-    </div>
+    </article>
   );
-};
-
-export default ProjectCard;
+}
